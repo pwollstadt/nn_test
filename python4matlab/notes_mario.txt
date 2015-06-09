@@ -1,0 +1,35 @@
+10/14/2014 02:34 PM
+
+Dear Michael and Patricia,
+
+please find attached the code that enables to call the OpenCL version of
+the library from Matlab. Below there is a brief description about the files.
+This is a workaround that calls Python from Matlab and uses
+intermediate .mat files to copy the data back and forth. For this reason,
+the performance will be damaged. At least, you will be able to use the
+OpenCL version from Matlab before you finish the TRENTOOL
+migration to Python.
+
+Best, Mario
+
+_________________________________
+Mario Martínez Zarzuela
+Dpto. Teoría de la Señal, Com e Ing Telemática
+Universidad de Valladolid
+983 42 36 60 (ext. 5702)
+
+
+---------- Forwarded message ----------
+From: Carlos González Gutiérrez <carlosglezgutierrez@gmail.com>
+Date: 2014-10-14 12:40 GMT+02:00
+Subject: Re: Entrega Alemanes
+To: Mario Martínez Zarzuela <marmar5702@gmail.com>
+
+
+This delivery contains six files. Two with Matlab code, three with python and one with OpenCL. gpuKnnBF_kernel.cl and gpuKnnLibrary.py are equal to the ones presents in the last deliverable.
+
+To call python from Matlab, we decided to exchange data throught .mat files. This is not the optimus method, but it's quite simple and easy, although it has an improvable performance.
+
+To use this six files you have two options. They can work on their own, making the operations on OpenCL, and returning the data to Matlab. The Matlab files looks pretty similar than the version from Mario, where you can change all the parameters. We've added in this files a new option called "CompareCudaOpenCL". That option allows to compare the OpenCL data with the original version of CUDA. You need to copy the files into the original folder, and then execute one of the .m files. It calculates both CUDA and OpenCL, comparing the results and showing execution times. In this case, we included all the copies and reads of the .mat file in the OpenCL timer, so it would be much more slower than the option with CUDA.
+
+Best, Carlos
